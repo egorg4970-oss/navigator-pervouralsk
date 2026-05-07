@@ -1,0 +1,275 @@
+/* Основные переменные и настройки */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+    --primary-color: #ffcc00; /* Фирменный желтый */
+    --secondary-bg: #000000;
+    --secondary-text: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #000000;
+    --success-color: #28a745; /* Зеленый для бесплатных занятий */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- ШАПКА (HEADER) --- */
+header {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: var(--secondary-text);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* --- ГЛАВНЫЙ ЭКРАН (HERO) --- */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    background-color: var(--primary-color);
+    border-bottom: 6px solid #000;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 950;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: #000;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: 3px solid #000;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* --- ЗАГОЛОВОК СЕКЦИИ --- */
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 80px 0 50px;
+    position: relative;
+}
+
+/* --- СЕТКА КАРТОЧЕК --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+/* --- КАРТОЧКА (CARD) --- */
+.section-card {
+    background-color: var(--card-bg);
+    border: 4px solid var(--card-border);
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.section-card:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 14px 14px 0px var(--primary-color);
+}
+
+.section-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-card p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+/* МЕТА-ДАННЫЕ (АДРЕС, ТЕЛЕФОН) */
+.card-meta {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 2px solid #f0f0f0;
+    margin-bottom: 25px;
+}
+
+.group {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 800;
+    background-color: var(--primary-color);
+    padding: 5px 12px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.address, .phone {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.address i, .phone i {
+    margin-right: 10px;
+    color: #555;
+    width: 20px;
+    text-align: center;
+}
+/* --- ССЫЛКИ И КНОПКИ В КАРТОЧКАХ --- */
+.site-link {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #000;
+    color: var(--primary-color);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.site-link:hover {
+    background-color: var(--primary-color);
+    color: #000;
+}
+
+.no-link {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: #f4f4f4;
+    color: #999;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px dashed #ccc;
+}
+
+/* --- ПОДВАЛ (FOOTER) --- */
+footer {
+    background-color: var(--secondary-bg);
+    padding: 40px 0;
+    border-top: 8px solid var(--primary-color);
+}
+
+/* --- АДАПТИВНОСТЬ --- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero {
+        padding: 60px 0;
+    }
+
+    nav ul {
+        display: none; /* Скрываем меню на мобильных для чистоты */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-card:hover {
+        transform: none;
+        box-shadow: 8px 8px 0px var(--primary-color);
+    }
+}
